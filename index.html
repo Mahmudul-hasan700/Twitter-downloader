@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Twitter video download by SnapTwitter - Download Twitter video, gif to mp4 for Free</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js" as="script">
+  <script type="application/ld+json">
+{
+"@context":"https://schema.org/",
+"@type":"WebSite",
+"@id":"https://twittervid.com/#website",
+"url":"https://twittervid.com/",
+"name":"Twitter Vid",
+"alternateName":"TwitterVid",
+"description":"Download a Twitter video with just one click using our free Twitter video downloader tool. Save it to any device or platform as an MP4 in HD.",
+"image":"https://twittervid.com/images/logo_512x512.png"}
+
+  </script>
+  <style>
+    @font-face {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      src: url(https://fonts.gstatic.com/s/montserrat/v26/JTUHjIg1_i6t8kCHKm4532VJOt5-QNFgpCu173w5aX8.ttf)format('truetype')
+    }
+  </style>
+
+  <style>
+    @import url(https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap);
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Add this CSS in your stylesheet */
+    .disable-scroll {
+      overflow: hidden;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .thumbnail {
+      width: 100%;
+      height: auto;
+    }
+
+    .thumbnail-title {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      justify-content: center;
+    }
+
+
+    .download-link {
+      display: inline-block;
+      width: 100%;
+      padding: 0.5rem 1rem;
+      margin-top: 10px;
+      background-color: #4299e1;
+      color: #fff;
+      border-radius: 0.25rem;
+      text-decoration: none;
+      margin-right: 0.5rem;
+      text-align: center;
+    }
+
+    .accordion-content {
+      line-height: 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .2s ease-out
+    }
+
+    .accordion-text {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms
+    }
+
+    .accordion-item .button {
+      width: 100%;
+      text-align: left;
+      justify-content: space-between;
+      height: auto;
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms
+    }
+
+    .accordion-title {
+      white-space: initial
+    }
+
+    .accordion-content {
+      line-height: 24px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height .2s ease-out
+    }
+
+    .accordion-item {
+      border-radius: .25rem;
+      box-shadow: 0 .125rem .25rem rgb(0 0 0 / 8%);
+      word-wrap: break-word;
+      margin-bottom: 1rem
+    }
+
+    .accordion-text,
+    .section {
+      padding: 1rem
+    }
+
+    .accordion-text {
+      transition-property: all;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 150ms
+    }
+
+    .accordion .accordion-content:not(.show) {
+      max-height: 0;
+      transition: .3s;
+      display: block
+    }
+
+    .accordion-content:not(.show) {
+      display: none
+    }
+  </style>
+</head>
+
+<body class="bg-slate-900 text-slate-200">
+  <header class="sticky top-0 bg-slate-800 border-b border-slate-200 border-slate-800 z-30">
+
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+      <div class="flex items-center justify-between h-20">
+
+        <!-- Site branding -->
+
+        <div class="shrink-0 mr-5">
+
+          <!-- Logo -->
+
+          <a href="#" class="flex items-center">
+            <img src="https://twittervid.com/assets/img/logo.svg?h=b34ed6c0be77958b287800f78bc4b971" class="h-8 mr-3"
+              alt="Flowbite Logo" />
+            <span class="d-flex justify-content-center align-items-center"
+              style="font-family:Montserrat;font-size:20px;color:#a4b0dd;margin-right:0!important"
+              translate>Twitter<span
+                style="background:rgba(166,176,217,.9);border-radius:3px;color:#000;padding:0 4px;line-height:23px;margin-left:2px">Vid</span></span></a>
+
+
+        </div><!-- Desktop navigation -->
+
+        <nav class="hidden md:flex md:grow">
+
+          <!-- Desktop menu links -->
+
+          <ul class="flex grow flex-wrap items-center font-medium">
+
+            <li>
+
+              <a class="text-gray-300 hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                href="./">Home</a>
+
+            </li>
+
+            <li>
+
+              <a class="text-gray-300 hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                href="#how-to">How to Use</a>
+
+            </li>
+
+            <li>
+
+              <a class="text-gray-300 hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                href="/#faq">FAQ</a>
+
+            </li>
+
+            <li>
+
+              <a class="text-gray-300 hover:text-gray-100 px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                href="/#contact">Contact</a>
+            </li><!-- 1st level: hover -->
+          </ul>
+        </nav>
+        <!-- Mobile menu -->
+
+        <div class="inline-flex md:hidden" x-data="{ expanded: false }">
+          <!-- Hamburger button -->
+
+          <button class="hamburger" aria-controls="mobile-nav" id="menuIcon"><span class="sr-only">Menu</span>
+
+            <svg class="w-6 h-6 fill-current text-gray-300 hover:text-gray-100 transition duration-150 ease-in-out"
+              viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+
+              <rect y="4" width="24" height="2" rx="1"></rect>
+
+              <rect y="11" width="24" height="2" rx="1"></rect>
+
+              <rect y="18" width="24" height="2" rx="1"></rect>
+            </svg></button>
+
+          <button id="closeIcon" style="display: none;">
+            <svg class="w-6 h-5 fill-current text-gray-300 hover:text-gray-100 transition duration-150 ease-in-out"
+              aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6" />
+            </svg>
+          </button>
+          <nav id="mobile-nav"
+            class="fixed hidden top-0 h-screen z-20 left-0 w-full max-w-sm -ml-16 overflow-scroll bg-gray-900 shadow-lg no-scrollbar ease-in-out"
+            x-show="expanded" x-transition:enter="transition ease-out duration-200 transform"
+            x-transition:enter-start="opacity-0 -translate-x-full" x-transition:enter-end="opacity-100 translate-x-0"
+            x-transition:leave="transition ease-out duration-200" x-transition:leave-start="opacity-100"
+            x-transition:leave-end="opacity-0" x-cloak="">
+
+            <div class="py-6 pr-4 pl-20">
+
+              <!-- Logo -->
+
+              <a href="#" class="flex items-center">
+                <img src="https://twittervid.com/assets/img/logo.svg?h=b34ed6c0be77958b287800f78bc4b971"
+                  class="h-8 mr-3" alt="Flowbite Logo" />
+                <span class="d-flex justify-content-center align-items-center"
+                  style="font-family:Montserrat;font-size:20px;color:#a4b0dd;margin-right:0!important"
+                  translate>Twitter<span
+                    style="background:rgba(166,176,217,.9);border-radius:3px;color:#000;padding:0 4px;line-height:23px;margin-left:2px">Vid</span></span></a>
+
+
+              <ul>
+
+                <li>
+
+                  <a class="flex text-gray-300 hover:text-gray-100 py-2" href="./">Home</a>
+
+                </li>
+
+                <li>
+
+                  <a class="flex text-gray-300 hover:text-gray-100 py-2" href="#how-to">How to Use</a>
+
+                </li>
+
+                <li>
+
+                  <a class="flex text-gray-300 hover:text-gray-100 py-2" href="#faq">FAQ</a>
+
+                </li>
+
+                <li>
+
+                  <a class="flex text-gray-300 hover:text-gray-100 py-2" href="/#contact">Contact</a>
+
+                </li>
+
+              </ul>
+
+            </div>
+
+          </nav>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </header>
+
+  <main class="bg-slate-900 text-slate-200">
+    <div
+      class="container max-w-screen-md p-6 px-4 py-4 mx-auto text-lg mt-5 text-gray-700 md:py-0 fade-in bg-slate-900 text-slate-200">
+      <div id="card container mx-auto">
+        <h1 class="text-2xl font-extrabold text-center mb-5 text-gray-300">Twitter Downloader</h1>
+        <form id="downloadForm" method="POST">
+          <input type="URL" placeholder="Enter URL here" id="twitterUrl" name="twitterUrl" required
+            class="w-full p-2 text-lg border rounded-md outline-none focus:border-blue-500 focus:border-blue-500 border-gray-700 bg-gray-800 text-white" />
+          <button type="submit"
+            class="w-full mt-4 py-3 flex items-center justify-center text-lg font-semibold rounded-md transition duration-300 cursor-pointer bg-gray-700 text-white">
+            <span id="loader" class="hidden">
+              <svg aria-hidden="true" class="inline w-6 h-6 mr-2 animate-spin text-gray-600 fill-gray-300"
+                viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50.5908 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50.5908 9.67226C27.9921 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                  fill="currentColor" />
+                <path
+                  d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                  fill="currentFill" />
+              </svg>
+            </span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewbox="0 0 24 24" fill="none">
+              <path
+                d="M11 5C11 4.44772 11.4477 4 12 4C12.5523 4 13 4.44772 13 5V12.1578L16.2428 8.91501L17.657 10.3292L12.0001 15.9861L6.34326 10.3292L7.75748 8.91501L11 12.1575V5Z"
+                fill="currentColor"></path>
+              <path d="M4 14H6V18H18V14H20V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V14Z"
+                fill="currentColor"></path>
+            </svg>Download
+          </button>
+        </form>
+      </div>
+      <div id="result" class="mt-4 bg-gray-800 rounded-md">
+        <!-- Download links and thumbnails will be displayed here -->
+      </div>
+    </div>
+    <div id="alert" class="fixed hidden alert inset-0 flex items-center justify-center z-50">
+      <div class="bg-gray-800 border-2 border-gray-700 fade-in w-96 p-6 rounded-lg overflow-hidden shadow-lg">
+        <div class="flex justify-between mb-3 items-center">
+          <h2 class="text-lg font-semibold">Error Loading Tweet</h2>
+
+        </div>
+        <p id="error-alert"></p>
+        <div class="mt-4 flex justify-end">
+          <button class="bg-slate-500 text-gray-100 px-4 py-2 rounded hover:bg-slate-600">OK</button>
+        </div>
+      </div>
+    </div>
+    <div id="url-error" class="fixed hidden alert inset-0 flex items-center justify-center z-50">
+      <div class="bg-gray-800 border-2 border-gray-700 fade-in w-96 p-6 rounded-lg overflow-hidden shadow-lg">
+        <div class="flex justify-between mb-3 items-center">
+          <h2 class="text-lg font-semibold">Error Loading Tweet</h2>
+
+        </div>
+        <p id="error-text"></p>
+        <div class="mt-4 flex justify-end">
+          <button class="bg-slate-500 text-gray-100 px-4 py-2 rounded hover:bg-slate-600">OK</button>
+        </div>
+      </div>
+    </div>
+
+    </div>
+
+    <div class="container mx-auto p-4">
+      <span class="font-bold text-lg">Twittervid</span> video downloader hd tool allow you to save tweets to your device
+      (mobile or PC) for free. You can download videos from Twitter in full hd with public account privacy settings.
+
+      Download Twitter videos as many as you wish. Our Twitter downloader does not limit the number of videos you can
+      save for free. The best part of our tool is the speed: depending on your internet connection, you can get
+      downloadable links in ~2 seconds. Each video is available for downloading with at least three quality options:
+      from high to low.
+    </div>
+    <section id="how-to" class="container mx-auto p-4">
+      <div id="how-to">
+        <!-- Body -->
+        <div class="space-y-2 mb-5">
+          <h2 class="text-2xl font-semibold text-center">How to Download Twitter Videos</h2>
+          <p>Are you tired of scrolling through your Twitter feed, only to find that the video you wanted to save has
+            disappeared?
+            Look no further! Our Twitter video downloader service makes it easy for you to save your favorite videos
+            from Twitter
+            with just a few simple steps.</p>
+
+          <p><strong
+              style="background:rgba(166,176,217,.9);border-radius:3px;color:#000;padding:2px 4px;line-height:23px;margin-left:2px">Step
+              1:</strong> Discover the tweet that contains the video you want to download.</p>
+          <p><strong
+              style="background:rgba(166,176,217,.9);border-radius:3px;color:#000;padding:2px 4px;line-height:23px;margin-left:2px">Step
+              2:</strong> Click on the share icon and click on &quot;Copy Link&quot; to copy the tweet link.</p>
+          <p><strong
+              style="background:rgba(166,176,217,.9);border-radius:3px;color:#000;padding:2px 4px;line-height:23px;margin-left:2px">Step
+              3:</strong> Paste the tweet link into our URL text box above and hit the &quot;Download&quot; button.
+            .</p>
+          <p><strong
+              style="background:rgba(166,176,217,.9);border-radius:3px;color:#000;padding:2px 4px;line-height:23px;margin-left:2px">Step
+              4:</strong> Choose the MP4 format that suits your needs and download it to your device.
+          </p>
+
+          <p>No more missing out on the best Twitter videos. With our service, you can keep your favorite videos at your
+            fingertips,
+            ready to watch anytime, anywhere. Try it out now and start saving your favorite Twitter videos today
+            !</p>
+        </div>
+      </div>
+    </section>
+    <section id="faq" class="mt-10">
+      <h2 class="text-2xl font-semibold text-center">Frequently Ask Questions</h2>
+      <div class="container mx-auto p-4">
+        <div class="accordion" id="faq" itemscope itemtype="https://schema.org/FAQPage">
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">What does this page do?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p>This tool allows you to
+
+                  download any Twitter video directly to
+
+                  your device with just a single click.
+
+                  Twitter Vid is a free Twitter video
+
+                  downloader with ultra fast download
+
+                  speed. Download Twitter videos as an MP4
+
+                  in HD, ensuring high quality
+
+                  playback.</p>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">How can i use this page?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4 overflow-auto">
+              <div class="accordion-text card-body">
+                <p class="mb-0">To use this tool, simply
+
+                  enter the link/URL of the Tweet you wish
+
+                  to download into the input field and
+
+                  click the "Load Videos" button. 
+
+                  Then, select whichever quality you want
+
+                  and click the "download" button. The
+
+                  video will then be downloaded to your
+
+                  device in MP4 format. This is essentially
+
+                  a Twitter to MP4 tool, since it
+
+                  allows you to convert any Tweet to
+
+                  MP4. This tool is an all-in-one
+
+                  Twitter video saver.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button class="button  w-full is-info btn-accordion flex justify-between items-center bg-gray-700 p-4">
+              <h3 class="accordion-title" itemprop="name">How long does it take to download a
+
+                video?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p class="mb-0">The download speed will
+
+                  depend on your internet connection and
+
+                  the size of the video. However, our
+
+                  optimal and efficient Twitter video
+
+                  downloader should keep the download
+
+                  process relatively quick.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item bg-clip-padding border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">Can I download a Twitter GIF with this
+
+                tool?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p class="mb-0">Yes! Twitter Vid is also
+
+                  a Twitter GIF downloader, meaning
+
+                  you can download any Twitter GIF. Simply
+
+                  enter your Tweet link click on the "Load
+
+                  Videos" button. Then select the quality
+
+                  you want to down the GIF in and click
+
+                  "Download." Always remember, you can save
+
+                  any Twitter video as a GIF or MP4 using
+
+                  this tool.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">How to download videos from tweets with
+
+                multiple videos?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p class="mb-0">Twitter Vid allows you to
+
+                  download videos from tweets with mixed
+
+                  media. This means you can download videos
+
+                  from tweets that have multiple videos or
+
+                  GIFs. If you want to download a tweet
+
+                  with more than one video, just put the
+
+                  link into Twitter Vid and it will list
+
+                  all the available videos for you to
+
+                  download. Unlike most other Twitter Video
+
+                  Downloader tools, Twitter Vid has the
+
+                  option to download multiple videos from a
+
+                  single tweet.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">How to download Twitter Videos on iOS or
+
+                Android?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p class="mb-0">Twitter Vid allows you to
+
+                  download videos on almost any device or
+
+                  platform. This means you can download any
+
+                  Twitter video on iPhone, iPad,
+
+                  Android, iOS, Windows, Mac, or even
+
+                  Linux using TwitterVid.com. You can
+
+                  also install the official Twitter Video
+
+                  Downloader extension on <a
+                    href="https://chrome.google.com/webstore/detail/twitter-video-downloader/fpbmnfnipncpbfenhgoodkocemppkbbi"
+                    target="_blank" class="text-green-500 hover:underline">Chrome</a>, <a
+                    href="https://addons.mozilla.org/en-US/firefox/addon/twitter-video-downloader/" target="_blank"
+                    class="text-green-500 hover:underline">Firefox</a>, or <a
+                    href="https://microsoftedge.microsoft.com/addons/detail/fljbipkhnfnekhfpkjpanojhhikbfjhm"
+                    target="_blank" class="text-green-500 hover:underline">Edge</a>.<br>
+
+                  <br>
+
+                  Furthermore, Twitter Vid even offers an
+
+                  <a href="https://www.icloud.com/shortcuts/2066f61990a74011a4f8fa52eb70181b" target="_blank">iOS
+                    shortcut</a> to make
+
+                  it easy to download videos from tweets
+
+                  within the Twitter app itself, using the
+
+                  share menu.<br>
+
+                  <br>
+
+                  We also offer a Twitter video downloader
+
+                  app for Android users that you can
+
+                  install right from the <a
+                    href="https://play.google.com/store/apps/details?id=com.twittervid.twa&utm_source=twittervid_website&pcampaignid=twittervid_website"
+                    target="_blank">Google Play
+
+                    Store</a>.
+                </p>
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">Is it safe to download videos from
+
+                Twitter? </h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p class="mb-0">Yes, if you use
+
+                  TwitterVid.com to download your videos or
+
+                  GIFs, we guarantee all the files are safe
+
+                  and secure. Twitter Vid prioritizes user
+
+                  privacy and does not store any personal
+
+                  information. Furthermore, all download
+
+                  links are directly from Twitter
+
+                  servers.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">Can I download videos from private
+
+                Twitter accounts?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p class="mb-0">Twitter does not allow
+
+                  downloading videos from private accounts.
+
+                  This is to respect the privacy of users
+
+                  who have chosen to keep their Twitter
+
+                  profiles and content private. However,
+
+                  you can still use Twitter Vid to download
+
+                  videos from public or shadow-banned
+
+                  accounts.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">Is it legal to download Twitter
+
+                videos?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p class="mb-0">Downloading Twitter
+
+                  videos for personal use is generally
+
+                  considered legal. However, it is
+
+                  important to respect all copyrighted
+
+                  videos and not distribute, reproduce, or
+
+                  monetize the downloaded content without
+
+                  permission from the owner. Always give
+
+                  proper credit to the original creator if
+
+                  you share or use the content in any
+
+                  way.</p>
+
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">How to download high quality Twitter
+
+                videos?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p class="mb-0">Twitter Vid allows you to
+
+                  download high-resolution videos up to the
+
+                  original quality posted on Twitter. When
+
+                  you enter the Tweet URL and click "Load
+
+                  Videos," you will be presented with
+
+                  different quality options to choose from.
+
+                  Select the highest quality available to
+
+                  download the video in the best possible
+
+                  resolution.</p>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">How to download videos from Twitter?
+              </h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                <p class="mb-0">Here's how to save videos
+
+                  from Twitter:</p>
+
+                <ol class="list-decimal">
+
+                  <li>Copy the link of the tweet that has
+
+                    the video you want to save.</li>
+
+                  <li>Navigate to the Twitter video
+
+                    downloader: TwitterVid.com</li>
+
+                  <li>Paste the Tweet link in the "Tweet
+
+                    URL" field.</li>
+
+                  <li>Tap "Load Videos"</li>
+
+                  <li>Pick the quality you want and tap
+
+                    the "Download" button.</li>
+
+                  <li>If you are on iOS, a share menu
+
+                    should pop up, click "Save Video" to
+
+                    save it to your camera roll. On
+
+                    Android, it will save to your device
+
+                    automatically.</li>
+
+                </ol>
+              </div>
+            </div>
+          </div>
+
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">Can I edit Twitter videos downloaded at Twittervid?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                No, Twittervid is just a Twitter video downloader, not supporting video editing. Use specialized video
+                editing
+                software on your phone or PC.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item border border-gray-300 rounded mb-4 overflow-hidden">
+            <button
+              class="button font-semibold bg-gray-700 w-full is-info btn-accordion flex justify-between items-center p-4">
+              <h3 class="accordion-title" itemprop="name">Does Twittervid provide tiktok mp3 download solution?</h3>
+              <span class="icon arrow transform rotate-0 transition-transform duration-300">
+                <svg class="w-5 h-5 text-gray-400 faq-toggle-icon" xmlns="http://www.w3.org/2000/svg" fill="none"
+                  viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                </svg>
+              </span>
+            </button>
+            <div class="accordion-content hidden px-4">
+              <div class="accordion-text">
+                Twittervid respects the intellectual property rights of the tracks so Twittervid will not provide this
+                solution.
+                However, there are currently quite a few application websites that provide this Twitter Mp3 service such
+                as
+                <b>Tikmate</b>, <b>SaveTik.Net</b>, <b>SSStiktok</b>, etc. You can download Twitter mp3 music but are
+                not
+                allowed to use it for commercial activities, monetize it.
+              </div>
+            </div>
+          </div>
+          <!-- Add more FAQ items with similar structure -->
+        </div>
+      </div>
+    </section>
+    <section style="margin-top:5px" class="mb-10">
+
+      <p style="text-align:center;font-size:13px" data-nosnippet="">© Copyright 2023 Twitter Vid - All Rights
+        Reserved.<br>
+
+        This service is in no way affiliated with Twitter, X, Inc.
+
+        or its affiliates. <br>
+
+        Twitter Vid does NOT host nor store any videos on its
+
+        servers.</p>
+
+    </section>
+    <script src="js/app.js">
+
+    </script>
+
+    <script>
+      const faqItems = document.querySelectorAll('.accordion-item');
+
+      faqItems.forEach((item) => {
+        const button = item.querySelector('.btn-accordion');
+        const content = item.querySelector('.accordion-content');
+        const arrow = button.querySelector('.arrow');
+
+        button.addEventListener('click', () => {
+          // Close all FAQ items
+          faqItems.forEach((faqItem) => {
+            const faqContent = faqItem.querySelector('.accordion-content');
+            if (faqItem !== item) {
+              faqContent.classList.add('hidden');
+              faqContent.style.maxHeight = null; // Close the answer
+              const otherArrow = faqItem.querySelector('.arrow');
+              otherArrow.classList.remove('rotate-180'); // Rotate the other arrows back to default
+            }
+          });
+
+          // Toggle the 'hidden' class for the clicked FAQ item
+          content.classList.toggle('hidden');
+
+          // Rotate the arrow icon for the clicked FAQ item
+          arrow.classList.toggle('rotate-180');
+
+          // Toggle the maxHeight property for smooth transitions
+          if (content.style.maxHeight) {
+            content.style.maxHeight = null; // Close the answer
+          } else {
+            content.style.maxHeight = content.scrollHeight + 'px'; // Open the answer
+          }
+        });
+      });
+    </script>
+    <script>
+      // Get references to the menu and button elements
+      const mobileNav = document.getElementById("mobile-nav");
+      const menuIcon = document.getElementById("menuIcon");
+      const closeIcon = document.getElementById("closeIcon");
+
+      // Function to show the menu and hide the menu icon
+      function showMenu() {
+        mobileNav.style.display = "block";
+        closeIcon.style.display = "block";
+        menuIcon.style.display = "none";
+      }
+
+      // Function to hide the menu and show the menu icon
+      function hideMenu() {
+        mobileNav.style.display = "none";
+        closeIcon.style.display = "none";
+        menuIcon.style.display = "block";
+      }
+
+      // Add event listeners to the menu icon and close icon buttons
+      menuIcon.addEventListener("click", showMenu);
+      closeIcon.addEventListener("click", hideMenu);
+
+      // Initial state: show menu icon and hide menu content
+      hideMenu();
+    </script>
+    <script defer
+      src="https://static.cloudflareinsights.com/beacon.min.js/v84a3a4012de94ce1a686ba8c167c359c1696973893317"
+      integrity="sha512-euoFGowhlaLqXsPWQ48qSkBSCFs3DPRyiwVu3FjR96cMPx+Fr+gpWRhIafcHwqwCqWS42RZhIudOvEI+Ckf6MA=="
+      data-cf-beacon='{"rayId":"8217268d6faa2167","r":1,"version":"2023.10.0","token":"0bda2cd69b5d49a185499d5ed02c1bff"}'
+      crossorigin="anonymous"></script>
+
+</body>
+
+</html>
